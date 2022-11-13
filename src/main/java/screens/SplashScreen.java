@@ -3,9 +3,8 @@ package screens;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidElement;
 import org.openqa.selenium.support.FindBy;
-import screens.BaseScreen;
 
-public class SplashScreen extends BaseScreen {
+public class SplashScreen extends BaseScreen{
     public SplashScreen(AppiumDriver<AndroidElement> driver) {
         super(driver);
     }
@@ -18,4 +17,8 @@ public class SplashScreen extends BaseScreen {
     }
 
 
+    public AuthenticationScreen checkVersion(String version){
+        versionTextView.getText().contains(version);
+        return new AuthenticationScreen(driver);
+    }
 }
